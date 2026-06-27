@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semangat Terus Ya Sayang ❤️</title>
+
+<style>
+
+.heart{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    font-size:100px;
+    animation:heartbeat 1s infinite;
+    z-index:1;
+    opacity:0.2;
+}
+
+@keyframes heartbeat{
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    25%{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+    50%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+    75%{
+        transform:translate(-50%,-50%) scale(1.2);
+    }
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(-45deg,#ff9a9e,#fad0c4,#fbc2eb,#a18cd1);
+background-size:400% 400%;
+animation:bg 10s infinite alternate;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+100%{background-position:100% 50%;}
+}
+
+.card{
+width:420px;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(0,0,0,.3);
+text-align:center;
+z-index:2;
+}
+
+h1{
+color:#ff4d6d;
+animation:naik 2s infinite alternate;
+}
+
+@keyframes naik{
+from{transform:translateY(0);}
+to{transform:translateY(-5px);}
+}
+
+p{
+margin-top:15px;
+font-size:17px;
+color:#555;
+}
+
+button{
+margin:8px;
+padding:10px 20px;
+border:none;
+border-radius:25px;
+background:#ff4d6d;
+color:white;
+font-size:15px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+background:#ff1744;
+}
+
+#pesan{
+margin-top:20px;
+font-weight:bold;
+color:#d81b60;
+min-height:70px;
+}
+
+#jam{
+margin-top:15px;
+font-weight:bold;
+color:#444;
+}
+
+.hati,.bunga{
+position:absolute;
+top:-20px;
+animation:jatuh linear infinite;
+opacity:.8;
+}
+
+@keyframes jatuh{
+0%{
+transform:translateY(-20px);
+}
+100%{
+transform:translateY(110vh);
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="heart">❤️</div>
+
+<h1>💖 Semangat Terus Ya Sayang 💖</h1>
+
+<p>
+Tetap semangat ya sayang...
+Jangan menyerah walaupun hari terasa berat.
+Kamu kuat, kamu hebat, dan kamu pasti bisa melewati semuanya.
+Aku selalu mendukungmu dari jauh. ❤️
+</p>
+
+<div id="jam"></div>
+
+<button onclick="semangat()">💪 Semangat</button>
+<button onclick="peluk()">🤗 Peluk</button>
+<button onclick="love()">❤️ Love</button>
+<button onclick="surat()">💌 Buka Surat</button>
+
+<div id="pesan"></div>
+
+</div>
+
+<script>
+
+function semangat(){
+document.getElementById("pesan").innerHTML=
+"✨ Semangat ya sayang. Percayalah, setiap usaha yang kamu lakukan akan membawamu ke hasil yang indah.";
+}
+
+function peluk(){
+document.getElementById("pesan").innerHTML=
+"🤗 Peluk virtual yang hangat buat kamu. Semoga lelahmu segera hilang dan harimu menjadi lebih baik.";
+}
+
+function love(){
+document.getElementById("pesan").innerHTML=
+"❤️ Aku percaya sama kamu. Jangan pernah ragu dengan kemampuanmu. Kamu luar biasa!";
+}
+
+function surat(){
+document.getElementById("pesan").innerHTML=
+"💌 Hai sayang... Kalau hari ini terasa berat, ingat ya, kamu tidak sendirian. Tetap tersenyum, jangan lupa makan, istirahat yang cukup, dan terus kejar impianmu. Aku yakin suatu saat semua perjuanganmu akan terbayarkan. Semangat terus ya sayang. ❤️";
+}
+
+setInterval(function(){
+let t=new Date();
+document.getElementById("jam").innerHTML=
+"🕒 "+t.toLocaleTimeString()+"<br>📅 "+t.toLocaleDateString();
+},1000);
+
+// Hati
+for(let i=0;i<25;i++){
+let h=document.createElement("div");
+h.className="hati";
+h.innerHTML="❤️";
+h.style.left=Math.random()*100+"%";
+h.style.fontSize=(15+Math.random()*20)+"px";
+h.style.animationDuration=(5+Math.random()*5)+"s";
+h.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(h);
+}
+
+// Bunga
+for(let i=0;i<25;i++){
+let b=document.createElement("div");
+b.className="bunga";
+b.innerHTML="🌸";
+b.style.left=Math.random()*100+"%";
+b.style.fontSize=(15+Math.random()*15)+"px";
+b.style.animationDuration=(6+Math.random()*5)+"s";
+b.style.animationDelay=Math.random()*5+"s";
+document.body.appendChild(b);
+}
+
+setTimeout(function(){
+    document.querySelector(".heart").style.display="none";
+},5000);
+
+</script>
+
+</body>
+</html>
